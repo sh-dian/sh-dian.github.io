@@ -1,0 +1,114 @@
+body {
+    background-color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+a {
+    color: black; 
+    text-decoration: none; 
+}
+
+.navbar {
+    padding: 10px;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-list li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 2px;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #333;
+    transition: width .3s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto; /* Centering the container */
+    max-width: 1200px; /* Maximum width for larger screens */
+    padding: 20px; /* Padding around the content */
+}
+
+.profile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+.profile-image img {
+    width: 80%;
+    height: auto;
+    border-radius: 0px 15px 15px 0px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Horizontal layout for larger screens */
+    }
+
+    .profile-image {
+        flex: 1;
+    }
+
+    .profile-info {
+        flex: 2;
+        margin-left: 2%;
+    }
+
+    .profile-image img {
+        width: 95%;
+        height: auto;
+        border-radius: 0px 15px 15px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-image img {
+        width: 50%; /* Full width for mobile */
+    }
+
+    .navbar {
+        flex-direction: row; /* Stack navigation items on smaller screens */
+    }
+
+    .nav-list {
+        flex-direction: row;
+        gap: 10px; /* Space between items in mobile view */
+    }
+
+    .profile-info {
+        flex: 2;
+        margin-left: 2%;
+    }
+}
